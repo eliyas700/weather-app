@@ -5,11 +5,12 @@ import InputField from "./Components/InputFields/InputField";
 import TempAndDetails from "./Components/TempAndDetails";
 import TimeAndLocation from "./Components/TimeAndLocation/TimeAndLocation";
 import TopButtons from "./Components/TopButtons/TopButtons";
+import getFormattedWeatherData from "./services/services";
 import getWeatherData from "./services/services";
 
 function App() {
   const weatherInfo = async () => {
-    const data = await getWeatherData("weather", { q: "london" });
+    const data = await getFormattedWeatherData({ q: "london" });
     console.log(data);
   };
   weatherInfo();
