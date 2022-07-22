@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { UilSearch, UilLocationPoint } from "@iconscout/react-unicons";
-const InputField = ({ setQuery }) => {
+const InputField = ({ setQuery, setUnits, units }) => {
   const [city, setCity] = useState("");
   const handleSearch = () => {
     {
@@ -22,6 +22,11 @@ const InputField = ({ setQuery }) => {
     }
   };
 
+  const handleUnitChange = (e) => {
+    const selectedUnit = e.currentTarget.name;
+
+    if (units !== selectedUnit) setUnits(selectedUnit);
+  };
   return (
     <div className="flex  flex-row justify-center my-6">
       <div className="flex flex-row w-3/4 items-center justify-center space-x-4">
@@ -44,11 +49,19 @@ const InputField = ({ setQuery }) => {
         />
       </div>
       <div className="flex flex-row w-1/4 items-center justify-center ">
-        <button name="metric" className="text-xl text-white font-medium">
+        <button
+          name="metric"
+          onClick={handleUnitChange}
+          className="text-xl text-white transition ease-in-out hover:scale-110 "
+        >
           °C
         </button>
         <p className="text-lg text-white mx-1">|</p>
-        <button name="imperial" className="text-xl text-white font-medium">
+        <button
+          name="imperial"
+          onClick={handleUnitChange}
+          className="text-xl text-white transition ease-in-out hover:scale-110 "
+        >
           °F
         </button>
       </div>
