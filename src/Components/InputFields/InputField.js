@@ -7,6 +7,21 @@ const InputField = ({ setQuery }) => {
       city && setQuery({ q: city });
     }
   };
+
+  const handleLocationClick = () => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        let lat = position.coords.latitude;
+        let lon = position.coords.longitude;
+
+        setQuery({
+          lat,
+          lon,
+        });
+      });
+    }
+  };
+
   return (
     <div className="flex  flex-row justify-center my-6">
       <div className="flex flex-row w-3/4 items-center justify-center space-x-4">
@@ -23,6 +38,7 @@ const InputField = ({ setQuery }) => {
           onClick={handleSearch}
         />
         <UilLocationPoint
+          onClick={handleLocationClick}
           size={24}
           className="text-white transition ease-in-out hover:scale-125 cursor-pointer"
         />
