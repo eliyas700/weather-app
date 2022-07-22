@@ -1,5 +1,6 @@
 // import UilReact from "@iconscout/react-unicons/icons/uil-react";
 import "./App.css";
+import Forecast from "./Components/Forecast";
 import InputField from "./Components/InputFields/InputField";
 import TempAndDetails from "./Components/TempAndDetails";
 import TimeAndLocation from "./Components/TimeAndLocation/TimeAndLocation";
@@ -12,6 +13,7 @@ function App() {
       <InputField />
       <TimeAndLocation />
       <TempAndDetails />
+      <Forecast title={"hourly forecast"} />
     </div>
   );
 }
