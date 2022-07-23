@@ -40,7 +40,7 @@ function App() {
   };
   return (
     <div
-      className={`mx-auto  mt-4 py-5 px-32 bg-gradient-to-br  h-fit shadow-xl shadow-gray-400 ${formatBackground()}`}
+      className={`mx-auto  mt-4 py-5 lg:px-32 bg-gradient-to-br  h-fit shadow-xl shadow-gray-400 ${formatBackground()}`}
     >
       <TopButtons setQuery={setQuery} />
       <InputField

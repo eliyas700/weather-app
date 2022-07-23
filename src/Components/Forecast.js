@@ -2,8 +2,6 @@ import React from "react";
 import { iconUrlFromCode } from "../services/services";
 
 const Forecast = ({ title, items, units }) => {
-  console.log(items);
-  const {} = items;
   return (
     <div>
       {" "}
