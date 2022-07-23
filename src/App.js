@@ -9,6 +9,7 @@ import TopButtons from "./Components/TopButtons/TopButtons";
 import getFormattedWeatherData from "./services/services";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
+import Footer from "./Components/Footer";
 function App() {
   const [query, setQuery] = useState({ q: "Khulna" });
   const [units, setUnits] = useState("metric");
@@ -65,7 +66,7 @@ function App() {
           />
         </>
       )}
-
+      <Footer />
       <ToastContainer autoClose={5000} theme="colored" newestOnTop={true} />
     </div>
   );
