@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { UilSearch, UilLocationPoint } from "@iconscout/react-unicons";
+
 const InputField = ({ setQuery, setUnits, units }) => {
   const [city, setCity] = useState("");
   const handleSearch = () => {

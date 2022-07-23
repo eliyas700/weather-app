@@ -1,7 +1,7 @@
 import React from "react";
 import { iconUrlFromCode } from "../services/services";
 
-const Forecast = ({ title, items }) => {
+const Forecast = ({ title, items, units }) => {
   console.log(items);
   const {} = items;
   return (
@@ -25,7 +25,9 @@ const Forecast = ({ title, items }) => {
                 className="w-12 my-1"
                 alt=""
               />
-              <p className="font-medium">{`${item?.temp.toFixed()}°`}</p>
+              <p className="font-medium">{`${item?.temp.toFixed()}°${
+                units === "metric" ? "C" : "F"
+              }`}</p>
             </div>
           ))}
         </div>
